@@ -1,0 +1,41 @@
+name: Hi Mascot
+on: push
+env:
+  mascot: Mona
+  super_duper_var: totally_awesome
+
+jobs:
+  windows_job:
+    runs-on: windows-latest
+    steps:
+      - run: echo 'Hi ${{ env.mascot }}'  # Hi Mona
+      - run: echo 'Hi ${{ env.mascot }}'  # Hi Octocat
+        env:
+          mascot: Octocat
+  linux_job:
+    runs-on: ubuntu-latest
+    env:
+      mascot: Tux
+    steps:
+      - run: echo 'Hi ${{ env.mascot }}'  # Hi Tux
+
+{
+  "status": "success",
+  "check_run_id": 51725241954,
+  "workflow_ref": "octo-org/octo-repo/.github/workflows/deploy.yml@refs/heads/main",
+  "workflow_sha": "abc123def456789abc123def456789abc123def4",
+  "workflow_repository": "octo-org/octo-repo",
+  "workflow_file_path": ".github/workflows/deploy.yml",
+  "container": {
+    "network": "github_network_53269bd575974817b43f4733536b200c"
+  },
+  "services": {
+    "postgres": {
+      "id": "60972d9aa486605e66b0dad4abb638dc3d9116f566579e418166eedb8abb9105",
+      "ports": {
+        "5432": "49153"
+      },
+      "network": "github_network_53269bd575974817b43f4733536b200c"
+    }
+  }
+}
